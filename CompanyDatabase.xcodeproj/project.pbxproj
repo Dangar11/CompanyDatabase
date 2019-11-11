@@ -14,9 +14,10 @@
 		DD28592723786F2D008A8184 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD28592523786F2D008A8184 /* LaunchScreen.storyboard */; };
 		DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28592E23787A6B008A8184 /* UIColor+theme.swift */; };
 		DD28593123789A24008A8184 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28593023789A24008A8184 /* CustomNavigation.swift */; };
-		DD2859342379CEF6008A8184 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2859332379CEF5008A8184 /* Company.swift */; };
 		DD2859392379D31C008A8184 /* CreateCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2859382379D31C008A8184 /* CreateCompanyController.swift */; };
 		DD28593B2379D5EE008A8184 /* UIViewController+NavigationStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28593A2379D5EE008A8184 /* UIViewController+NavigationStyle.swift */; };
+		DD28593E237A0507008A8184 /* CompanyModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */; };
+		DD285940237A0E79008A8184 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28593F237A0E79008A8184 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +30,10 @@
 		DD28592823786F2D008A8184 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD28592E23787A6B008A8184 /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
 		DD28593023789A24008A8184 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
-		DD2859332379CEF5008A8184 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		DD2859382379D31C008A8184 /* CreateCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCompanyController.swift; sourceTree = "<group>"; };
 		DD28593A2379D5EE008A8184 /* UIViewController+NavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationStyle.swift"; sourceTree = "<group>"; };
+		DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyModel.xcdatamodel; sourceTree = "<group>"; };
+		DD28593F237A0E79008A8184 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,8 @@
 		DD2859352379CF01008A8184 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DD2859332379CEF5008A8184 /* Company.swift */,
+				DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */,
+				DD28593F237A0E79008A8184 /* CoreDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,10 +186,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD28591F23786F2B008A8184 /* CompaniesController.swift in Sources */,
+				DD28593E237A0507008A8184 /* CompanyModel.xcdatamodeld in Sources */,
 				DD28593123789A24008A8184 /* CustomNavigation.swift in Sources */,
 				DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */,
-				DD2859342379CEF6008A8184 /* Company.swift in Sources */,
 				DD28593B2379D5EE008A8184 /* UIViewController+NavigationStyle.swift in Sources */,
+				DD285940237A0E79008A8184 /* CoreDataManager.swift in Sources */,
 				DD28591B23786F2B008A8184 /* AppDelegate.swift in Sources */,
 				DD2859392379D31C008A8184 /* CreateCompanyController.swift in Sources */,
 			);
@@ -386,6 +390,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */,
+			);
+			currentVersion = DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */;
+			path = CompanyModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DD28590F23786F2B008A8184 /* Project object */;
 }

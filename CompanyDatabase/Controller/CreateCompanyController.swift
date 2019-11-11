@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 
 //Custom Delegation
@@ -62,18 +63,39 @@ class CreateCompanyController: UIViewController {
   }
   
   @objc private func handleSave() {
-    print("save")
     
-    dismiss(animated: true) { [weak self] in 
-      guard let name = self?.nameTextField.text else { return }
+    
+    //initalization of our Core Data stack
+    
+    let context = CoreDataManager.shared.persistentContainer.viewContext
+    
+    let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
+    
+    company.setValue(self.nameTextField.text, forKey: "name")
+    
+    // perform the save
+    
+    do {
+      try context.save()
       
-      let company = Company(name: name, founded: Date())
-      
-      self?.delegate?.didAddCompany(company: company)
+      //success
+      dismiss(animated: true) { [weak self] in
+        
+        self?.delegate?.didAddCompany(company: company as! Company)
+        
+      }
+    } catch let error {
+      print("Failed to save company:", error.localizedDescription)
     }
-
+    
     
   }
+  
+  
+  
+  
+  
+  
   
   
   private func setupUI() {
@@ -99,7 +121,7 @@ class CreateCompanyController: UIViewController {
     nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     nameTextField.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-
+    
   }
   
   

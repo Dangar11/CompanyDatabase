@@ -7,23 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
 class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
   
   
   
-  
-  
-  
   let cellId = "companyCell"
   
-  var companies = [Company(name: "Apple", founded: Date()),
-                   Company(name: "Google", founded: Date()),
-                   Company(name: "Facebook", founded: Date())]
+  var companies = [Company]() // empty array
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    fetchCompanies()
+    
     // Do any additional setup after loading the view.
     
     view.backgroundColor = .white
@@ -34,6 +33,24 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
      navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleCompany))
   }
   
+  
+  private func fetchCompanies() {
+    // fetch CoreData
+     
+    let context = CoreDataManager.shared.persistentContainer.viewContext
+    
+    
+    let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+    
+    do {
+      let companies = try context.fetch(fetchRequest)
+      
+      self.companies = companies
+      self.tableView.reloadData()
+    } catch let error {
+      print("Unable to fetch data from CoreData store: ", error.localizedDescription)
+    }
+  }
   
   
    func didAddCompany(company: Company) {
