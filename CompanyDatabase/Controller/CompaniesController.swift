@@ -8,13 +8,16 @@
 
 import UIKit
 
-class CompaniesController: UITableViewController {
+class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
+  
+  
+  
   
   
   
   let cellId = "companyCell"
   
-  let companies = [Company(name: "Apple", founded: Date()),
+  var companies = [Company(name: "Apple", founded: Date()),
                    Company(name: "Google", founded: Date()),
                    Company(name: "Facebook", founded: Date())]
   
@@ -32,8 +35,19 @@ class CompaniesController: UITableViewController {
   }
   
   
+  
+   func didAddCompany(company: Company) {
+     companies.append(company)
+     
+     //Index the last element in the Array - 1
+     let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
+     
+     tableView.insertRows(at: [newIndexPath], with: .automatic)
+   }
+  
+  
   // MARK: - Setup TableView
-  func setupTableView() {
+  private func setupTableView() {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
         tableView.backgroundColor = .lusciousLavender
@@ -46,11 +60,13 @@ class CompaniesController: UITableViewController {
 
   
   // MARK: - Add Button Action
-  @objc func handleCompany() {
+  @objc private func handleCompany() {
     
     let createCompanyController = CreateCompanyController()
     
     let navController = UINavigationController(rootViewController: createCompanyController)
+    
+    createCompanyController.delegate = self
 
     present(navController, animated: true)
     
