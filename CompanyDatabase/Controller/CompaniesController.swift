@@ -113,6 +113,47 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
   }
   
   
+  override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (contextAction, view, boolValue) in
+      view.backgroundColor = .black
+      let company = self.companies[indexPath.row]
+      
+      //remove the company from our tableView
+      self.companies.remove(at: indexPath.row)
+      self.tableView.deleteRows(at: [indexPath], with: .fade)
+      
+      
+      //delete company from Core Data
+      let context = CoreDataManager.shared.persistentContainer.viewContext
+      context.delete(company)
+      
+      do {
+        try context.save()
+      } catch let error {
+        print("Unable to commit changes after deletion:", error.localizedDescription)
+      }
+      
+
+    }
+    
+    let editAction = UIContextualAction(style: .normal, title: "Edit") { (contextAction, view, boolValue) in
+      contextAction.backgroundColor = .brown
+      contextAction.title = "Hello"
+      
+      
+      print("Editing company...")
+    }
+    editAction.backgroundColor = .systemGreen
+    
+    
+    
+    let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+    return swipeActions
+  }
+  
+  
+  
+  
   
   //MARK: - Header Section
 
