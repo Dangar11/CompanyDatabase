@@ -99,7 +99,19 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     cell.backgroundColor = .aqueous
     
     let company = companies[indexPath.row]
-    cell.textLabel?.text = company.name
+    
+    if let name = company.name, let founded = company.founded {
+    
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .long
+      let dateFounded = dateFormatter.string(from: founded)
+      
+      let dateString = "\(name) - Founded : \(dateFounded)"
+      cell.textLabel?.text = dateString
+      
+    } else {
+      cell.textLabel?.text = company.name
+    }
     
     cell.textLabel?.textColor = .white
     cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)

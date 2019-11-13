@@ -23,6 +23,9 @@ class CreateCompanyController: UIViewController {
   var company: Company? {
     didSet {
       nameTextField.text = company?.name
+      
+      guard let founded = company?.founded else { return }
+      datePicker.date = founded
     }
   }
   
@@ -42,6 +45,13 @@ class CreateCompanyController: UIViewController {
     textField.placeholder = "Enter name"
     textField.translatesAutoresizingMaskIntoConstraints = false
     return textField
+  }()
+  
+  let datePicker: UIDatePicker = {
+    let dp = UIDatePicker()
+    dp.datePickerMode = .date
+    dp.translatesAutoresizingMaskIntoConstraints = false
+    return dp
   }()
   
   
@@ -93,6 +103,7 @@ class CreateCompanyController: UIViewController {
     let context = CoreDataManager.shared.persistentContainer.viewContext
     
     company?.name = nameTextField.text
+    company?.founded = datePicker.date
     
     do {
       try context.save()
@@ -119,6 +130,7 @@ class CreateCompanyController: UIViewController {
     let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
     
     company.setValue(self.nameTextField.text, forKey: "name")
+    company.setValue(datePicker.date, forKey: "founded")
     
     // perform the save
     
@@ -135,9 +147,6 @@ class CreateCompanyController: UIViewController {
       print("Failed to save company:", error.localizedDescription)
     }
   }
-  
-  
-  
   
   
   
@@ -164,6 +173,12 @@ class CreateCompanyController: UIViewController {
     nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     nameTextField.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    
+    lightBlueBackgroundView.addSubview(datePicker)
+    datePicker.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+    datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    datePicker.bottomAnchor.constraint(equalTo: lightBlueBackgroundView.bottomAnchor).isActive = true
     
   }
   
