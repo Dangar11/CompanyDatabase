@@ -14,10 +14,17 @@ import CoreData
 
 protocol CreateCompanyControllerDelegate {
   func didAddCompany(company: Company)
+  func didEditCompany(company: Company)
 }
 
 class CreateCompanyController: UIViewController {
   
+  
+  var company: Company? {
+    didSet {
+      nameTextField.text = company?.name
+    }
+  }
   
   var delegate: CreateCompanyControllerDelegate?
   
@@ -54,6 +61,13 @@ class CreateCompanyController: UIViewController {
     navigationItem.rightBarButtonItem?.tintColor = .white
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    
+    navigationItem.title = company == nil ? "Create Company" : "Edit Company"
+  }
+  
   
   
   
@@ -64,6 +78,39 @@ class CreateCompanyController: UIViewController {
   
   @objc private func handleSave() {
     
+    
+    switch company?.name {
+    case .none: createCompany()
+    default: saveCompanyChanges()
+    }
+    
+  
+  }
+  
+  func saveCompanyChanges() {
+    
+    
+    let context = CoreDataManager.shared.persistentContainer.viewContext
+    
+    company?.name = nameTextField.text
+    
+    do {
+      try context.save()
+      
+      //save succeded
+      dismiss(animated: true, completion: { [weak self] in
+        guard let company = self?.company else { return }
+        self?.delegate?.didEditCompany(company: company)
+      })
+    } catch let error {
+      print("Error occur during editing end persistance: ", error.localizedDescription )
+    }
+    
+    
+  }
+  
+  
+  private func createCompany() {
     
     //initalization of our Core Data stack
     
@@ -87,11 +134,7 @@ class CreateCompanyController: UIViewController {
     } catch let error {
       print("Failed to save company:", error.localizedDescription)
     }
-    
-    
   }
-  
-  
   
   
   
