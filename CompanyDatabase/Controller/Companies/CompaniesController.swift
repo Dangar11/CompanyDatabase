@@ -29,16 +29,16 @@ class CompaniesController: UITableViewController {
     setupTableView()
     setupNavigationStyle(title: "Companies")
     
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleReset))
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleResetCompany))
     navigationItem.leftBarButtonItem?.tintColor = .white
     
-     navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleCompany))
+    setupPlusButtonInNavigationBar(action: #selector(handleAddCompany))
   }
   
   
   
   // MARK: - Add Button Action
-  @objc private func handleCompany() {
+  @objc private func handleAddCompany() {
     
     let createCompanyController = CreateCompanyController()
     
@@ -50,7 +50,7 @@ class CompaniesController: UITableViewController {
     
   }
   
-  @objc private func handleReset() {
+  @objc private func handleResetCompany() {
     
     print("Delete all coreData object ")
     

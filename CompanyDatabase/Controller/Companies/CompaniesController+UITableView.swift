@@ -23,7 +23,7 @@ extension CompaniesController {
   }
   
   
-   //MARK: - TableView
+   //MARK: - TableView Main
     
     
     
@@ -41,6 +41,16 @@ extension CompaniesController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       return 60
     }
+  
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let company = self.companies[indexPath.row]
+    let employeesController = EmployeeController()
+    employeesController.company = company
+    navigationController?.pushViewController(employeesController, animated: true)
+    navigationController?.navigationBar.tintColor = .white
+  }
     
 
     

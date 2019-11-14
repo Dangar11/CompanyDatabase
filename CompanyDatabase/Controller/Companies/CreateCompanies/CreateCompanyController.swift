@@ -82,9 +82,8 @@ class CreateCompanyController: UIViewController {
     setupNavigationStyle(title: "Create Company")
     
     
-    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+    setupCancelButtonInNavigationBar()
     navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
-    navigationItem.leftBarButtonItem?.tintColor = .white
     navigationItem.rightBarButtonItem?.tintColor = .white
   }
   
@@ -99,9 +98,6 @@ class CreateCompanyController: UIViewController {
   // MARK: - Interaction Func
   
   
-  @objc private func handleCancel() {
-    dismiss(animated: true)
-  }
   
   @objc private func handleSave() {
     
