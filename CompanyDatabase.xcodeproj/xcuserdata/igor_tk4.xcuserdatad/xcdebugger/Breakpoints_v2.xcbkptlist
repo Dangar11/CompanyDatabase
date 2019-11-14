@@ -7,70 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0FB9996A-AA2D-4D8E-B61B-172436E15E22"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CompanyDatabase/Controller/CompaniesController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "fetchCompanies()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2D5B8930-1726-41A7-AE3D-2919335A7B39"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CompanyDatabase/Controller/CompaniesController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "fetchCompanies()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2D5B8930-1726-41A7-AE3D-2919335A7B39 - 92ebb1a73c0a9a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CompanyDatabase.CompaniesController.(fetchCompanies in _C93C339423F63DAF8B6D3C988649BD01)() -&gt; ()"
-                  moduleName = "CompanyDatabase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/CompaniesController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "452">
-               </Location>
-               <Location
-                  uuid = "2D5B8930-1726-41A7-AE3D-2919335A7B39 - f83a47841aaeee39"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (CompanyDatabase.Company) -&gt; () in CompanyDatabase.CompaniesController.(fetchCompanies in _C93C339423F63DAF8B6D3C988649BD01)() -&gt; ()"
-                  moduleName = "CompanyDatabase"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/CompaniesController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "53"
-                  endingLineNumber = "53"
-                  offsetFromSymbolStart = "57">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "5254084E-DF1D-46A5-9590-B4C10D570A42"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -81,38 +17,6 @@
             startingLineNumber = "106"
             endingLineNumber = "106"
             landmarkName = "handleSave()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9463958D-5192-491D-A373-A8735D1EA2A5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CompanyDatabase/Controller/CompaniesController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "tableView(_:trailingSwipeActionsConfigurationForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36FADEBC-A5EE-438A-9F00-92315710BB63"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CompanyDatabase/Controller/CompaniesController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

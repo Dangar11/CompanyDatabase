@@ -25,4 +25,20 @@ struct CoreDataManager {
     return container
   }()
   
+  
+  func fetchCompanies() -> [Company] {
+    
+    // fetch CoreData
+     
+    let context = persistentContainer.viewContext
+    let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+    do {
+      let companies = try context.fetch(fetchRequest)
+      return companies
+    } catch let error {
+      print("Unable to fetch data from CoreData store: ", error.localizedDescription)
+    }
+    return []
+  }
+  
 }
