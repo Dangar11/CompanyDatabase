@@ -25,10 +25,13 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     
     // Do any additional setup after loading the view.
     
-    view.backgroundColor = .white
+    view.backgroundColor = .plum
     
     setupTableView()
     setupNavigationStyle(title: "Companies")
+    
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleReset))
+    navigationItem.leftBarButtonItem?.tintColor = .white
     
      navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleCompany))
   }
@@ -81,7 +84,36 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     
   }
   
-  
+  @objc private func handleReset() {
+    
+    print("Delete all coreData object ")
+    
+    let context = CoreDataManager.shared.persistentContainer.viewContext
+    
+    let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: Company.fetchRequest())
+    
+    do {
+      try context.execute(batchDeleteRequest)
+      
+      // if succeeded to reset all from CoreData
+      
+      var indexPathToRemove = [IndexPath]()
+      
+      companies.enumerated().compactMap { index, _ in
+        let indexPath = IndexPath(row: index, section: 0)
+        indexPathToRemove.append(indexPath)
+      }
+      companies.removeAll()
+      tableView.deleteRows(at: indexPathToRemove, with: .left)
+      
+      
+      
+    } catch let error {
+      print("Failed delete all core data objects: ", error.localizedDescription)
+    }
+    
+    
+  }
   
   
   
@@ -123,6 +155,8 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     
     return cell
   }
+  
+
   
   
   // MARK: - TableView Editing
@@ -218,6 +252,26 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 50
+  }
+  
+  
+  
+  
+  // MARK: - Footer Section
+  
+  
+  override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    
+    let label = UILabel()
+    label.text = "No companies available..."
+    label.textColor = .white
+    label.textAlignment = .center
+    label.font = UIFont.boldSystemFont(ofSize: 16)
+    return label
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return companies.count == 0 ? 150 : 0
   }
   
   
