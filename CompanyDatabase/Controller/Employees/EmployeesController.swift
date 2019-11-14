@@ -38,17 +38,21 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   
   private func fetchEmployees() {
     
-    let context = CoreDataManager.shared.persistentContainer.viewContext
+    guard let companyEmployees = company?.employees?.allObjects as? [Employee] else { return }
     
-    let request = NSFetchRequest<Employee>(entityName: "Employee")
+    self.employees = companyEmployees
     
-    do {
-      let employees = try context.fetch(request)
-      
-      self.employees = employees
-    } catch let error {
-      print("Error occured during fetch Employee: ", error.localizedDescription)
-    }
+//    let context = CoreDataManager.shared.persistentContainer.viewContext
+//
+//    let request = NSFetchRequest<Employee>(entityName: "Employee")
+//
+//    do {
+//      let employees = try context.fetch(request)
+//
+//      self.employees = employees
+//    } catch let error {
+//      print("Error occured during fetch Employee: ", error.localizedDescription)
+//    }
   }
   
   
@@ -61,6 +65,7 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   
   @objc private func handleAdd() {
     let createEmployee = CreateEmployeeController()
+    createEmployee.company = company
     createEmployee.delegate = self
     let navController = UINavigationController(rootViewController: createEmployee)
     present(navController, animated: true, completion: nil)

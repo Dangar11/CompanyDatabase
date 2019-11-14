@@ -42,12 +42,14 @@ struct CoreDataManager {
   }
   
   
-  func createEmployee(setValue: Any?) -> (Employee?, Error?) {
+  func createEmployee(employeeName: Any?, company: Company) -> (Employee?, Error?) {
     let context = persistentContainer.viewContext
     
     let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee
     
-    employee.setValue(setValue, forKey: "name")
+    employee.company = company
+    
+    employee.setValue(employeeName, forKey: "name")
     
     
     

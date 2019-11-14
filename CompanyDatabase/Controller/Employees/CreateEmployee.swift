@@ -16,6 +16,7 @@ protocol CreateEmployeeControllerDelegate {
 
 class CreateEmployeeController: UIViewController {
   
+  var company: Company?
   
   var delegate: CreateEmployeeControllerDelegate?
   
@@ -51,9 +52,9 @@ class CreateEmployeeController: UIViewController {
   
   @objc private func handleSave() {
     
-    guard let employeeName = nameTextField.text else { return }
+    guard let employeeName = nameTextField.text, let companyName = company else { return }
     
-    let employeeData = CoreDataManager.shared.createEmployee(setValue: employeeName)
+    let employeeData = CoreDataManager.shared.createEmployee(employeeName: employeeName, company: companyName)
     
     let (employee, error) = employeeData
     
