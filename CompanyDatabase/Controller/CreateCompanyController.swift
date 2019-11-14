@@ -25,7 +25,10 @@ class CreateCompanyController: UIViewController {
   var company: Company? {
     didSet {
       nameTextField.text = company?.name
-      
+      if let imageData = company?.imageData {
+        companyImageView.image = UIImage(data: imageData)
+        imageRoundsToBounds(imageView: companyImageView)
+      }
       guard let founded = company?.founded else { return }
       datePicker.date = founded
     }
@@ -38,6 +41,7 @@ class CreateCompanyController: UIViewController {
     let imageView = UIImageView(image: #imageLiteral(resourceName: "select_photo_empty"))
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.isUserInteractionEnabled = true // interect with view
+    imageView.contentMode = .scaleAspectFill
     imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectPhoto)))
     return imageView
   }()
@@ -93,24 +97,6 @@ class CreateCompanyController: UIViewController {
   
   
   // MARK: - Interaction Func
-  @objc private func handleSelectPhoto() {
-    print("Select photo")
-    
-    let alert = UIAlertController(title: "Choose the photo", message: nil, preferredStyle: .actionSheet)
-    let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
-      self.getImage(fromSourceType: .photoLibrary)
-    }
-    let photoAction = UIAlertAction(title: "Make Photo", style: .default) { (action) in
-      
-      self.getImage(fromSourceType: .camera)
-    }
-    
-    alert.addAction(libraryAction)
-    alert.addAction(photoAction)
-    
-    self.present(alert, animated: true, completion: nil)
-    
-  }
   
   
   @objc private func handleCancel() {
@@ -132,42 +118,7 @@ class CreateCompanyController: UIViewController {
   
   // MARK: - Functionality
   
-  func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
-
-      //Check is source type available
-      if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-
-          let imagePickerController = UIImagePickerController()
-          imagePickerController.delegate = self
-          imagePickerController.allowsEditing = true
-          imagePickerController.sourceType = sourceType
-          self.present(imagePickerController, animated: true, completion: nil)
-      }
-  }
-  func saveCompanyChanges() {
-    
-    
-    let context = CoreDataManager.shared.persistentContainer.viewContext
-    
-    company?.name = nameTextField.text
-    company?.founded = datePicker.date
-    
-    do {
-      try context.save()
-      
-      //save succeded
-      dismiss(animated: true, completion: { [weak self] in
-        guard let company = self?.company else { return }
-        self?.delegate?.didEditCompany(company: company)
-      })
-    } catch let error {
-      print("Error occur during editing end persistance: ", error.localizedDescription )
-    }
-    
-    
-  }
-  
-  
+  //Create company in CoreData
   private func createCompany() {
     
     //initalization of our Core Data stack
@@ -178,6 +129,13 @@ class CreateCompanyController: UIViewController {
     
     company.setValue(self.nameTextField.text, forKey: "name")
     company.setValue(datePicker.date, forKey: "founded")
+    
+    guard let companyImage = companyImageView.image else { return }
+    
+    let imageData = companyImage.jpegData(compressionQuality: 0.8)
+    
+    company.setValue(imageData, forKey: "imageData")
+    
     
     // perform the save
     
@@ -194,6 +152,37 @@ class CreateCompanyController: UIViewController {
       print("Failed to save company:", error.localizedDescription)
     }
   }
+  
+  
+  // Save company to CoreData
+  func saveCompanyChanges() {
+    
+    
+    let context = CoreDataManager.shared.persistentContainer.viewContext
+    
+    company?.name = nameTextField.text
+    company?.founded = datePicker.date
+    //image persistance
+    guard let companyImage = companyImageView.image else { return }
+    let imageData = companyImage.jpegData(compressionQuality: 0.8)
+    company?.imageData = imageData
+    
+    do {
+      try context.save()
+      
+      //save succeded
+      dismiss(animated: true, completion: { [weak self] in
+        guard let company = self?.company else { return }
+        self?.delegate?.didEditCompany(company: company)
+      })
+    } catch let error {
+      print("Error occur during editing end persistance: ", error.localizedDescription )
+    }
+    
+    
+  }
+  
+
   
   
   //MARK: - SETUP UI
@@ -246,6 +235,8 @@ class CreateCompanyController: UIViewController {
 extension CreateCompanyController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
   
+  
+  
   func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     dismiss(animated: true, completion: nil)
   }
@@ -259,8 +250,53 @@ extension CreateCompanyController: UIImagePickerControllerDelegate, UINavigation
       companyImageView.image = originalImage
     }
     
+    imageRoundsToBounds(imageView: companyImageView)
+    
+    
     dismiss(animated: true, completion: nil)
   }
+  
+  private func imageRoundsToBounds(imageView: UIImageView) {
+   imageView.layer.cornerRadius = imageView.frame.width / 2
+   imageView.clipsToBounds = true
+   imageView.layer.borderColor = UIColor.lusciousLavender.cgColor
+   imageView.layer.borderWidth = 2
+  }
+  
+  
+  @objc private func handleSelectPhoto() {
+    print("Select photo")
+    
+    let alert = UIAlertController(title: "Choose the photo", message: nil, preferredStyle: .actionSheet)
+    let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+      self.getImage(fromSourceType: .photoLibrary)
+    }
+    let photoAction = UIAlertAction(title: "Make Photo", style: .default) { (action) in
+      
+      self.getImage(fromSourceType: .camera)
+    }
+    
+    alert.addAction(libraryAction)
+    alert.addAction(photoAction)
+    
+    self.present(alert, animated: true, completion: nil)
+    
+  }
+  
+  
+  func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+
+      //Check is source type available
+      if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+
+          let imagePickerController = UIImagePickerController()
+          imagePickerController.delegate = self
+          imagePickerController.allowsEditing = true
+          imagePickerController.sourceType = sourceType
+          self.present(imagePickerController, animated: true, completion: nil)
+      }
+  }
+  
   
   
 }
