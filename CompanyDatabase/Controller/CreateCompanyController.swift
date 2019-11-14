@@ -10,16 +10,18 @@ import UIKit
 import CoreData
 
 
-//Custom Delegation
+//MARK: - Custom Delegate
 
 protocol CreateCompanyControllerDelegate {
   func didAddCompany(company: Company)
   func didEditCompany(company: Company)
 }
 
+//MARK: - Controller
+
 class CreateCompanyController: UIViewController {
   
-  
+  // MARK: - Properties
   var company: Company? {
     didSet {
       nameTextField.text = company?.name
@@ -30,6 +32,15 @@ class CreateCompanyController: UIViewController {
   }
   
   var delegate: CreateCompanyControllerDelegate?
+  
+  
+  lazy var companyImageView: UIImageView = {
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "select_photo_empty"))
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.isUserInteractionEnabled = true // interect with view
+    imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectPhoto)))
+    return imageView
+  }()
   
   
   let nameLabel: UILabel = {
@@ -55,6 +66,8 @@ class CreateCompanyController: UIViewController {
   }()
   
   
+  //MARK: - View Lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -79,7 +92,25 @@ class CreateCompanyController: UIViewController {
   }
   
   
-  
+  // MARK: - Interaction Func
+  @objc private func handleSelectPhoto() {
+    print("Select photo")
+    
+    let alert = UIAlertController(title: "Choose the photo", message: nil, preferredStyle: .actionSheet)
+    let libraryAction = UIAlertAction(title: "Photo Library", style: .default) { (action) in
+      self.getImage(fromSourceType: .photoLibrary)
+    }
+    let photoAction = UIAlertAction(title: "Make Photo", style: .default) { (action) in
+      
+      self.getImage(fromSourceType: .camera)
+    }
+    
+    alert.addAction(libraryAction)
+    alert.addAction(photoAction)
+    
+    self.present(alert, animated: true, completion: nil)
+    
+  }
   
   
   @objc private func handleCancel() {
@@ -97,6 +128,22 @@ class CreateCompanyController: UIViewController {
   
   }
   
+  
+  
+  // MARK: - Functionality
+  
+  func getImage(fromSourceType sourceType: UIImagePickerController.SourceType) {
+
+      //Check is source type available
+      if UIImagePickerController.isSourceTypeAvailable(sourceType) {
+
+          let imagePickerController = UIImagePickerController()
+          imagePickerController.delegate = self
+          imagePickerController.allowsEditing = true
+          imagePickerController.sourceType = sourceType
+          self.present(imagePickerController, animated: true, completion: nil)
+      }
+  }
   func saveCompanyChanges() {
     
     
@@ -149,6 +196,7 @@ class CreateCompanyController: UIViewController {
   }
   
   
+  //MARK: - SETUP UI
   
   private func setupUI() {
     
@@ -160,28 +208,59 @@ class CreateCompanyController: UIViewController {
     lightBlueBackgroundView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
     lightBlueBackgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     lightBlueBackgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    lightBlueBackgroundView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+    lightBlueBackgroundView.heightAnchor.constraint(equalToConstant: 400).isActive = true
+    
+    
+    lightBlueBackgroundView.addSubview(companyImageView)
+    companyImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
+    companyImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    companyImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    companyImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     
     lightBlueBackgroundView.addSubview(nameLabel)
-    nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-    nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
+    nameLabel.topAnchor.constraint(equalTo: companyImageView.bottomAnchor).isActive = true
+    nameLabel.leadingAnchor.constraint(equalTo: lightBlueBackgroundView.leadingAnchor, constant: 16).isActive = true
     nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
     nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
     
     lightBlueBackgroundView.addSubview(nameTextField)
     nameTextField.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
-    nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    nameTextField.trailingAnchor.constraint(equalTo: lightBlueBackgroundView.trailingAnchor).isActive = true
     nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    nameTextField.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    nameTextField.topAnchor.constraint(equalTo: companyImageView.bottomAnchor).isActive = true
     
     lightBlueBackgroundView.addSubview(datePicker)
     datePicker.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-    datePicker.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-    datePicker.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    datePicker.leadingAnchor.constraint(equalTo: lightBlueBackgroundView.leadingAnchor).isActive = true
+    datePicker.trailingAnchor.constraint(equalTo: lightBlueBackgroundView.trailingAnchor).isActive = true
     datePicker.bottomAnchor.constraint(equalTo: lightBlueBackgroundView.bottomAnchor).isActive = true
     
   }
   
+  
+  
+}
+
+
+//MARK: - ImagePicker
+extension CreateCompanyController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    dismiss(animated: true, completion: nil)
+  }
+  
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+    if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+      companyImageView.image = editedImage
+    } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+      companyImageView.image = originalImage
+    }
+    
+    dismiss(animated: true, completion: nil)
+  }
   
   
 }
