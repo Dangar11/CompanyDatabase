@@ -42,20 +42,22 @@ struct CoreDataManager {
   }
   
   
-  func createEmployee(setValue: Any?) -> Error? {
+  func createEmployee(setValue: Any?) -> (Employee?, Error?) {
     let context = persistentContainer.viewContext
     
-    let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context)
+    let employee = NSEntityDescription.insertNewObject(forEntityName: "Employee", into: context) as! Employee
     
     employee.setValue(setValue, forKey: "name")
+    
+    
     
     do {
       try context.save()
       //save succeed
-      return nil
+      return (employee, nil)
     } catch let error {
       print("Unable to create Employee: ", error.localizedDescription)
-      return error
+      return (nil, error)
     }
   }
   
