@@ -11,6 +11,23 @@ import UIKit
 
 class CreateEmployeeController: UIViewController {
   
+  
+  let nameLabel: UILabel = {
+     let label = UILabel()
+     label.text = "Name"
+     label.translatesAutoresizingMaskIntoConstraints = false
+     return label
+   }()
+   
+   let nameTextField: UITextField = {
+     let textField = UITextField()
+     textField.becomeFirstResponder()
+     textField.placeholder = "Enter name"
+     textField.translatesAutoresizingMaskIntoConstraints = false
+     return textField
+   }()
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -18,13 +35,50 @@ class CreateEmployeeController: UIViewController {
     
     setupCancelButtonInNavigationBar()
     
+    setupUI()
     
-    view.backgroundColor = .red
+    setupSaveButtonNavigationBar(action: #selector(handleSave))
+    
+    view.backgroundColor = .chinaRose
+  }
+  
+  @objc private func handleSave() {
+    
+    guard let employeeError = nameTextField.text else { return }
+    
+    let error = CoreDataManager.shared.createEmployee(setValue: employeeError)
+    
+    if let error = error {
+      // present an error modal
+      print(error)
+    } else {
+      dismiss(animated: true, completion: nil)
+    }
+    
+    
   }
   
   
-  @objc func handleCancel() {
+  @objc private func handleCancel() {
     dismiss(animated: true, completion: nil)
+  }
+  
+  private func setupUI() {
+    
+    let lightBlueBackgroundView = setupLightBlueBackground(withHeight: 50)
+    lightBlueBackgroundView.addSubview(nameLabel)
+    nameLabel.topAnchor.constraint(equalTo: lightBlueBackgroundView.topAnchor).isActive = true
+    nameLabel.leadingAnchor.constraint(equalTo: lightBlueBackgroundView.leadingAnchor, constant: 16).isActive = true
+    nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    
+    lightBlueBackgroundView.addSubview(nameTextField)
+    nameTextField.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor).isActive = true
+    nameTextField.trailingAnchor.constraint(equalTo: lightBlueBackgroundView.trailingAnchor).isActive = true
+    nameTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    nameTextField.topAnchor.constraint(equalTo: lightBlueBackgroundView.topAnchor).isActive = true
+    
+    
   }
   
 }

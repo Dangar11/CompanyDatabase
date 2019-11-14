@@ -24,6 +24,7 @@
 		DD47F6CB237DCE35008C331D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CA237DCE35008C331D /* EmployeesController.swift */; };
 		DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */; };
 		DD47F6D0237DD365008C331D /* CreateEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CF237DD365008C331D /* CreateEmployee.swift */; };
+		DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		DD47F6CA237DCE35008C331D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
 		DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		DD47F6CF237DD365008C331D /* CreateEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployee.swift; sourceTree = "<group>"; };
+		DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCompanyController+UIImagePicker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DD2859382379D31C008A8184 /* CreateCompanyController.swift */,
+				DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */,
 			);
 			path = CreateCompanies;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				DD47F6D0237DD365008C331D /* CreateEmployee.swift in Sources */,
 				DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */,
 				DD47F6CB237DCE35008C331D /* EmployeesController.swift in Sources */,
+				DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */,
 				DD285940237A0E79008A8184 /* CoreDataManager.swift in Sources */,
 				DD28591B23786F2B008A8184 /* AppDelegate.swift in Sources */,
 				DD2859392379D31C008A8184 /* CreateCompanyController.swift in Sources */,

@@ -65,7 +65,7 @@ class CompaniesController: UITableViewController {
       
       var indexPathToRemove = [IndexPath]()
       
-      companies.enumerated().compactMap { index, _ in
+      _ = companies.enumerated().compactMap { index, _ in
         let indexPath = IndexPath(row: index, section: 0)
         indexPathToRemove.append(indexPath)
       }
