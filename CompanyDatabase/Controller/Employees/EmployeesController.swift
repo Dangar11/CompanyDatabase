@@ -10,12 +10,19 @@ import UIKit
 import CoreData
 
 
+
 class EmployeeController: UITableViewController, CreateEmployeeControllerDelegate {
   
   
   let cellId = "EmployeeCell"
   
   var employees = [Employee]()
+  
+  var shortNameEmployees = [Employee]()
+  var longNameEmployees = [Employee]()
+  var reallyLongName = [Employee]()
+  
+  var allEmployees = [[Employee]]()
   
   var company: Company? {
     didSet {
@@ -40,19 +47,35 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
     
     guard let companyEmployees = company?.employees?.allObjects as? [Employee] else { return }
     
-    self.employees = companyEmployees
     
-//    let context = CoreDataManager.shared.persistentContainer.viewContext
-//
-//    let request = NSFetchRequest<Employee>(entityName: "Employee")
-//
-//    do {
-//      let employees = try context.fetch(request)
-//
-//      self.employees = employees
-//    } catch let error {
-//      print("Error occured during fetch Employee: ", error.localizedDescription)
-//    }
+    shortNameEmployees = companyEmployees.filter({ (employee) -> Bool in
+      if let employeeCount = employee.name?.count {
+        return employeeCount < 6
+      }
+        return false
+    })
+    
+    
+    longNameEmployees = companyEmployees.filter { (employee) -> Bool in
+      if let employeeCount = employee.name?.count {
+        return employeeCount > 6 && employeeCount < 9
+      }
+      return false
+    }
+    
+    reallyLongName = companyEmployees.filter { (employee) -> Bool in
+      if let employeeCount = employee.name?.count {
+        return employeeCount > 9
+      }
+      return false
+    }
+    
+    allEmployees = [
+    shortNameEmployees,
+    longNameEmployees,
+    reallyLongName
+    ]
+    
   }
   
   
@@ -74,14 +97,22 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   
   // MARK: - TableView
   
-  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return employees.count
+  override func numberOfSections(in tableView: UITableView) -> Int {
+    return allEmployees.count
   }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return allEmployees[section].count
+    }
+    
+
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-    let employee = employees[indexPath.row]
     
+//    let employee = indexPath.section == 0 ? shortNameEmployees[indexPath.row] : longNameEmployees[indexPath.row]
+    
+    let employee = allEmployees[indexPath.section][indexPath.row]
     
     
     cell.textLabel?.text = employee.name
@@ -97,4 +128,30 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
     return cell
   }
   
+  
+  
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let label = IndentedLabel()
+    
+    switch section {
+    case 0 :
+      label.text = "Short names"
+    case 1 :
+      label.text = "Long names"
+    case 2 :
+      label.text = "Very Long Names"
+    default:
+      label.text = "Other"
+    }
+    label.backgroundColor = UIColor.plum
+    label.font = UIFont.boldSystemFont(ofSize: 16)
+    return label
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 50
+  }
+  
 }
+
+

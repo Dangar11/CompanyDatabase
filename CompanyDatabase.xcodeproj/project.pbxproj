@@ -25,6 +25,7 @@
 		DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */; };
 		DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */; };
 		DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */; };
+		DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
 		DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCompanyController+UIImagePicker.swift"; sourceTree = "<group>"; };
+		DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				DD28591A23786F2B008A8184 /* AppDelegate.swift */,
 				DD28592E23787A6B008A8184 /* UIColor+theme.swift */,
 				DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */,
+				DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				DD28593E237A0507008A8184 /* CompanyModel.xcdatamodeld in Sources */,
 				DD28593123789A24008A8184 /* CustomNavigation.swift in Sources */,
 				DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */,
+				DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */,
 				DD47F6C3237D8FA1008C331D /* CompanyCell.swift in Sources */,
 				DD28593B2379D5EE008A8184 /* UIViewController+NavigationStyle.swift in Sources */,
 				DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */,
