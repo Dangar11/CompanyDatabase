@@ -51,6 +51,17 @@ class CreateEmployeeController: UIViewController {
   }()
   
   
+  let employeeTypeSegmentedControl: UISegmentedControl = {
+    let types = ["TechLead", "Senior", "Employee"]
+    let segmentControl = UISegmentedControl(items: types)
+    segmentControl.selectedSegmentIndex = 0
+    segmentControl.translatesAutoresizingMaskIntoConstraints = false
+    segmentControl.backgroundColor = UIColor.aqueous
+    segmentControl.selectedSegmentTintColor = UIColor.plum
+    return segmentControl
+  }()
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -90,8 +101,10 @@ class CreateEmployeeController: UIViewController {
      showError(title: "The date isn't vali  d", message: "Please enter valid date format")
       return }
     
+    guard let employeeType = employeeTypeSegmentedControl.titleForSegment(at: employeeTypeSegmentedControl.selectedSegmentIndex) else { return }
+  
     
-    let employeeData = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: bornDate, company: companyName)
+    let employeeData = CoreDataManager.shared.createEmployee(employeeName: employeeName, birthday: bornDate, employeeType: employeeType, company: companyName)
     
     let (employee, error) = employeeData
     
@@ -124,7 +137,7 @@ class CreateEmployeeController: UIViewController {
   
   private func setupUI() {
     
-    let lightBlueBackgroundView = setupLightBlueBackground(withHeight: 100)
+    let lightBlueBackgroundView = setupLightBlueBackground(withHeight: 150)
     lightBlueBackgroundView.addSubview(nameLabel)
     nameLabel.topAnchor.constraint(equalTo: lightBlueBackgroundView.topAnchor).isActive = true
     nameLabel.leadingAnchor.constraint(equalTo: lightBlueBackgroundView.leadingAnchor, constant: 16).isActive = true
@@ -148,6 +161,12 @@ class CreateEmployeeController: UIViewController {
     birthdayTextField.trailingAnchor.constraint(equalTo: lightBlueBackgroundView.trailingAnchor).isActive = true
     birthdayTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
     birthdayTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+    
+    lightBlueBackgroundView.addSubview(employeeTypeSegmentedControl)
+    employeeTypeSegmentedControl.leadingAnchor.constraint(equalTo: lightBlueBackgroundView.leadingAnchor, constant: 16).isActive = true
+    employeeTypeSegmentedControl.trailingAnchor.constraint(equalTo: lightBlueBackgroundView.trailingAnchor, constant: -16).isActive = true
+    employeeTypeSegmentedControl.heightAnchor.constraint(equalToConstant: 44).isActive = true
+    employeeTypeSegmentedControl.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
     
     
   }
