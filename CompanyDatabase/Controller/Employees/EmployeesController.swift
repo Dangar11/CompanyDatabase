@@ -81,7 +81,16 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
     let employee = employees[indexPath.row]
+    
+    
+    
     cell.textLabel?.text = employee.name
+    if let birthday = employee.birthday {
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateStyle = .long
+      let birthdayDate = dateFormatter.string(from: birthday)
+      cell.textLabel?.text = "\(employee.name ?? "") - Born: \(birthdayDate)"
+    }
     cell.backgroundColor = UIColor.aqueous
     cell.textLabel?.textColor = .white
     cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 15)

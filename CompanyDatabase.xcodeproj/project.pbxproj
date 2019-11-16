@@ -23,7 +23,7 @@
 		DD47F6C7237DA589008C331D /* CompaniesController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6C6237DA589008C331D /* CompaniesController+UITableView.swift */; };
 		DD47F6CB237DCE35008C331D /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CA237DCE35008C331D /* EmployeesController.swift */; };
 		DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */; };
-		DD47F6D0237DD365008C331D /* CreateEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CF237DD365008C331D /* CreateEmployee.swift */; };
+		DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */; };
 		DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		DD47F6C6237DA589008C331D /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
 		DD47F6CA237DCE35008C331D /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
 		DD47F6CC237DD13F008C331D /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
-		DD47F6CF237DD365008C331D /* CreateEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployee.swift; sourceTree = "<group>"; };
+		DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
 		DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCompanyController+UIImagePicker.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				DD47F6CA237DCE35008C331D /* EmployeesController.swift */,
-				DD47F6CF237DD365008C331D /* CreateEmployee.swift */,
+				DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */,
 			);
 			path = Employees;
 			sourceTree = "<group>";
@@ -237,7 +237,7 @@
 				DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */,
 				DD47F6C3237D8FA1008C331D /* CompanyCell.swift in Sources */,
 				DD28593B2379D5EE008A8184 /* UIViewController+NavigationStyle.swift in Sources */,
-				DD47F6D0237DD365008C331D /* CreateEmployee.swift in Sources */,
+				DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */,
 				DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */,
 				DD47F6CB237DCE35008C331D /* EmployeesController.swift in Sources */,
 				DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */,
