@@ -11,6 +11,7 @@ import CoreData
 
 
 
+
 class EmployeeController: UITableViewController, CreateEmployeeControllerDelegate {
   
   
@@ -23,6 +24,12 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   var reallyLongName = [Employee]()
   
   var allEmployees = [[Employee]]()
+  
+  var employeeTypes = [
+    EmployeeType.TechLead.rawValue,
+    EmployeeType.Senior.rawValue,
+    EmployeeType.Employee.rawValue
+  ]
   
   var company: Company? {
     didSet {
@@ -47,45 +54,36 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
     
     guard let companyEmployees = company?.employees?.allObjects as? [Employee] else { return }
     
+    //every time we call this function set empty allEmployees array
+    allEmployees = []
     
-    shortNameEmployees = companyEmployees.filter({ (employee) -> Bool in
-      if let employeeCount = employee.name?.count {
-        return employeeCount < 6
-      }
-        return false
-    })
-    
-    
-    longNameEmployees = companyEmployees.filter { (employee) -> Bool in
-      if let employeeCount = employee.name?.count {
-        return employeeCount > 6 && employeeCount < 9
-      }
-      return false
+    // go throught enum looping
+    employeeTypes.forEach { (employeeType) in
+      
+      // filter each enumType for companyEmployees and adding them to allEmplooyes array
+      allEmployees.append(
+        companyEmployees.filter { $0.type == employeeType }
+      )
     }
-    
-    reallyLongName = companyEmployees.filter { (employee) -> Bool in
-      if let employeeCount = employee.name?.count {
-        return employeeCount > 9
-      }
-      return false
-    }
-    
-    allEmployees = [
-    shortNameEmployees,
-    longNameEmployees,
-    reallyLongName
-    ]
-    
   }
   
   
+  
+  
+  // Call this when we dismiss employee creation - Delegate
   func didAddEmployee(employee: Employee) {
-    employees.append(employee)
-    tableView.reloadData()
+    //in which section we adding
+    guard let employeeType = employee.type else { return }
+    guard let section = employeeTypes.firstIndex(of: employeeType) else { return }
+    // which row we adding
+    let row = allEmployees[section].count
+    let insertionIndexPath = IndexPath(row: row, section: section)
+    
+    allEmployees[section].append(employee)
+    
+    tableView.insertRows(at: [insertionIndexPath], with: .middle)
   }
 
-  
-  
   @objc private func handleAdd() {
     let createEmployee = CreateEmployeeController()
     createEmployee.company = company
@@ -133,20 +131,12 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = IndentedLabel()
     
-    switch section {
-    case 0 :
-      label.text = "Short names"
-    case 1 :
-      label.text = "Long names"
-    case 2 :
-      label.text = "Very Long Names"
-    default:
-      label.text = "Other"
-    }
+    label.text = employeeTypes[section]
     label.backgroundColor = UIColor.plum
     label.font = UIFont.boldSystemFont(ofSize: 16)
     return label
   }
+  
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 50

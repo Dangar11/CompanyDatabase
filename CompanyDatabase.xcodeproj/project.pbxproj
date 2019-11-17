@@ -26,6 +26,7 @@
 		DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */; };
 		DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */; };
 		DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */; };
+		DD53FAC72380D4AB007D89C8 /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		DD47F6CF237DD365008C331D /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
 		DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCompanyController+UIImagePicker.swift"; sourceTree = "<group>"; };
 		DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
+		DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */,
 				DD28593F237A0E79008A8184 /* CoreDataManager.swift */,
+				DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD28591F23786F2B008A8184 /* CompaniesController.swift in Sources */,
+				DD53FAC72380D4AB007D89C8 /* EmployeeType.swift in Sources */,
 				DD47F6C7237DA589008C331D /* CompaniesController+UITableView.swift in Sources */,
 				DD28593E237A0507008A8184 /* CompanyModel.xcdatamodeld in Sources */,
 				DD28593123789A24008A8184 /* CustomNavigation.swift in Sources */,
