@@ -27,6 +27,7 @@
 		DD47F6D2237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */; };
 		DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */; };
 		DD53FAC72380D4AB007D89C8 /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */; };
+		DDE4A578238825680020828C /* CompaniesAutoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4A577238825680020828C /* CompaniesAutoUpdateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DD47F6D1237DD8FA008C331D /* CreateCompanyController+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCompanyController+UIImagePicker.swift"; sourceTree = "<group>"; };
 		DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 		DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
+		DDE4A577238825680020828C /* CompaniesAutoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesAutoUpdateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				DD47F6CE237DD34C008C331D /* Employees */,
 				DD47F6C8237DA907008C331D /* Companies */,
+				DDE4A577238825680020828C /* CompaniesAutoUpdateController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				DD47F6C7237DA589008C331D /* CompaniesController+UITableView.swift in Sources */,
 				DD28593E237A0507008A8184 /* CompanyModel.xcdatamodeld in Sources */,
 				DD28593123789A24008A8184 /* CustomNavigation.swift in Sources */,
+				DDE4A578238825680020828C /* CompaniesAutoUpdateController.swift in Sources */,
 				DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */,
 				DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */,
 				DD47F6C3237D8FA1008C331D /* CompanyCell.swift in Sources */,
