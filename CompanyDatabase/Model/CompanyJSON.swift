@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Model for JSON Parsing
+
 struct CompanyJSON: Decodable {
   
   let name: String

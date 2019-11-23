@@ -11,6 +11,8 @@ import Foundation
 //case tech = "default value"
 // enum by default -> Int
 
+//Employee Types
+
 enum EmployeeType: String {
   case Executive
   case SeniorManagement = "Senior Management"

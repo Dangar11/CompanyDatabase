@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+// Parsing JSON from URL
 
 struct JSONService {
   
@@ -37,6 +38,7 @@ struct JSONService {
         
         privateContext.parent = CoreDataManager.shared.persistentContainer.viewContext
         
+          //Companies fetching
         jsonCompanies.forEach { (jsonCompany) in
           
           print(jsonCompany.name)
@@ -51,13 +53,13 @@ struct JSONService {
           
           company.founded = foundedDate
           
-          // employee fetching
+          // Employee fetching
           
           jsonCompany.employees?.forEach({ (jsonEmployee) in
             print("\(jsonEmployee.name)")
             let employee = Employee(context: privateContext)
             
-            employee.name = jsonEmployee.name
+            employee.fullName = jsonEmployee.name
             employee.type = jsonEmployee.type
             let birthdayDate = dateFormatter.date(from: jsonEmployee.birthday)
             employee.birthday = birthdayDate

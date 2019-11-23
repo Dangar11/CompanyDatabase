@@ -46,6 +46,7 @@
 		DD28593A2379D5EE008A8184 /* UIViewController+NavigationStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationStyle.swift"; sourceTree = "<group>"; };
 		DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CompanyModel.xcdatamodel; sourceTree = "<group>"; };
 		DD28593F237A0E79008A8184 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		DD429848238966C10041C6C9 /* CompanyModel_ v1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "CompanyModel_ v1.1.xcdatamodel"; sourceTree = "<group>"; };
 		DD47F6C2237D8FA1008C331D /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		DD47F6C4237DA47B008C331D /* CompaniesController+CreateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CreateCompany.swift"; sourceTree = "<group>"; };
 		DD47F6C6237DA589008C331D /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
@@ -467,9 +468,10 @@
 		DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				DD429848238966C10041C6C9 /* CompanyModel_ v1.1.xcdatamodel */,
 				DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */,
 			);
-			currentVersion = DD28593D237A0507008A8184 /* CompanyModel.xcdatamodel */;
+			currentVersion = DD429848238966C10041C6C9 /* CompanyModel_ v1.1.xcdatamodel */;
 			path = CompanyModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
