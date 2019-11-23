@@ -26,6 +26,8 @@ class CompanyCell: UITableViewCell {
 
       } else {
         nameFoundedLabel.text = company?.name
+        
+        nameFoundedLabel.text = "\(company?.name ?? "") - \(company?.numberEmployees ?? "")"
       }
       
       if let companyImage = company?.imageData {
