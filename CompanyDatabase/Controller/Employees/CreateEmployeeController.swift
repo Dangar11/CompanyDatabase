@@ -52,10 +52,12 @@ class CreateEmployeeController: UIViewController {
   
   
   let employeeTypeSegmentedControl: UISegmentedControl = {
+    
     let types = [
-      EmployeeType.TechLead.rawValue,
-      EmployeeType.Senior.rawValue,
-      EmployeeType.Employee.rawValue
+      EmployeeType.Executive.rawValue,
+      EmployeeType.SeniorManagement.rawValue,
+      EmployeeType.Staff.rawValue,
+      EmployeeType.Intern.rawValue
     ]
     let segmentControl = UISegmentedControl(items: types)
     segmentControl.selectedSegmentIndex = 0

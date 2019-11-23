@@ -35,10 +35,10 @@ class CompanyCell: UITableViewCell {
   }
   
   let companyImageView: UIImageView = {
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "profile2"))
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "select_photo_empty"))
     imageView.contentMode = .scaleAspectFill
     imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.layer.cornerRadius = 25
+    imageView.layer.cornerRadius = 20
     imageView.clipsToBounds = true
     imageView.layer.borderColor = UIColor.lusciousLavender.cgColor
     imageView.layer.borderWidth = 2
@@ -66,8 +66,8 @@ class CompanyCell: UITableViewCell {
   
   private func setupUI() {
     addSubview(companyImageView)
-    companyImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-    companyImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+    companyImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+    companyImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
     companyImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 16).isActive = true
     companyImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     

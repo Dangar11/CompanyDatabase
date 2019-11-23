@@ -12,7 +12,8 @@ import Foundation
 // enum by default -> Int
 
 enum EmployeeType: String {
-  case TechLead = "TechLead"
-  case Senior = "Senior"
-  case Employee = "Employee"
+  case Executive
+  case SeniorManagement = "Senior Management"
+  case Staff
+  case Intern
 }

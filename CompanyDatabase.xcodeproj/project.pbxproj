@@ -28,6 +28,8 @@
 		DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */; };
 		DD53FAC72380D4AB007D89C8 /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */; };
 		DDE4A578238825680020828C /* CompaniesAutoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4A577238825680020828C /* CompaniesAutoUpdateController.swift */; };
+		DDE4A57A23886DDB0020828C /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4A57923886DDB0020828C /* Service.swift */; };
+		DDE4A57C238872BF0020828C /* CompanyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE4A57B238872BF0020828C /* CompanyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		DD53FAC4238088BC007D89C8 /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 		DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
 		DDE4A577238825680020828C /* CompaniesAutoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesAutoUpdateController.swift; sourceTree = "<group>"; };
+		DDE4A57923886DDB0020828C /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		DDE4A57B238872BF0020828C /* CompanyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 				DD28593C237A0507008A8184 /* CompanyModel.xcdatamodeld */,
 				DD28593F237A0E79008A8184 /* CoreDataManager.swift */,
 				DD53FAC62380D4AB007D89C8 /* EmployeeType.swift */,
+				DDE4A57923886DDB0020828C /* Service.swift */,
+				DDE4A57B238872BF0020828C /* CompanyJSON.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -248,7 +254,9 @@
 				DD28592F23787A6B008A8184 /* UIColor+theme.swift in Sources */,
 				DD53FAC5238088BC007D89C8 /* IndentedLabel.swift in Sources */,
 				DD47F6C3237D8FA1008C331D /* CompanyCell.swift in Sources */,
+				DDE4A57C238872BF0020828C /* CompanyJSON.swift in Sources */,
 				DD28593B2379D5EE008A8184 /* UIViewController+NavigationStyle.swift in Sources */,
+				DDE4A57A23886DDB0020828C /* Service.swift in Sources */,
 				DD47F6D0237DD365008C331D /* CreateEmployeeController.swift in Sources */,
 				DD47F6CD237DD13F008C331D /* UIViewController+Helpers.swift in Sources */,
 				DD47F6CB237DCE35008C331D /* EmployeesController.swift in Sources */,

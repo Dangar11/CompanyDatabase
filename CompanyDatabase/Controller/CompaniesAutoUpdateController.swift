@@ -13,6 +13,7 @@ class CompaniesAutoUpdateController: UITableViewController, NSFetchedResultsCont
   
   // warning code this going to be a bit monster
   
+  
   let cellID = "companyCell"
   
   lazy var fetchResultsController: NSFetchedResultsController<Company> = {
@@ -53,15 +54,27 @@ class CompaniesAutoUpdateController: UITableViewController, NSFetchedResultsCont
       UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(handleAdd)),
       UIBarButtonItem(title: "Delete", style: .plain, target: self, action: #selector(handleDelete))
     ]
+    navigationItem.leftBarButtonItems?.forEach({ (left) in
+      left.tintColor = .white
+    })
     
-    navigationItem.title = "Company Auto Updates"
+    setupNavigationStyle(title: "Company Auto Updates")
     
-    tableView.backgroundColor = UIColor.aqueous
+    tableView.backgroundColor = UIColor.lusciousLavender
+    
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+    refreshControl.tintColor = .white
+    self.refreshControl = refreshControl
     
   }
   
   //for section
   
+  @objc private func handleRefresh() {
+    JSONService.shared.downloadCompaniesFromServer()
+    refreshControl?.endRefreshing()
+  }
   
   func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
       tableView.beginUpdates()
@@ -77,7 +90,9 @@ class CompaniesAutoUpdateController: UITableViewController, NSFetchedResultsCont
           break
       case .update:
           break
-      }
+      @unknown default:
+        fatalError()
+    }
   }
   
   
@@ -93,7 +108,9 @@ func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, 
         tableView.reloadRows(at: [indexPath!], with: .fade)
     case .move:
         tableView.moveRow(at: indexPath!, to: newIndexPath!)
-    }
+    @unknown default:
+      fatalError()
+  }
 }
   
   
@@ -124,7 +141,7 @@ func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, 
     
     let request: NSFetchRequest<Company> = Company.fetchRequest()
     
-    request.predicate = NSPredicate(format: "name CONTAINS %@", "Z")
+//    request.predicate = NSPredicate(format: "name CONTAINS %@", "Z")
     
     let context = CoreDataManager.shared.persistentContainer.viewContext
     
@@ -159,7 +176,9 @@ func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, 
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let label = IndentedLabel()
     label.text = fetchResultsController.sectionIndexTitles[section]
-    label.backgroundColor = .white
+    label.backgroundColor = .plum
+    label.textColor = .chinaRose
+    label.font = UIFont.boldSystemFont(ofSize: 18)
     return label
   }
   
@@ -173,6 +192,16 @@ func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, 
     let company = fetchResultsController.object(at: indexPath)
     cell.company = company
     return cell
+  }
+  
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    let employeesController = EmployeeController()
+    employeesController.company = fetchResultsController.object(at: indexPath)
+    
+    navigationController?.pushViewController(employeesController, animated: true)
+    navigationController?.navigationBar.tintColor = .white
   }
   
 }

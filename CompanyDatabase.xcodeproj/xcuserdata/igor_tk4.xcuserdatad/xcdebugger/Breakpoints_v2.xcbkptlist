@@ -52,5 +52,398 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "27A8374F-2478-4EE9-814C-0E146AE664CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A93B4DF3-F205-41B8-8922-DC2FBAC35734"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A93B4DF3-F205-41B8-8922-DC2FBAC35734 - 3a69d108a984a344"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.JSONService.downloadCompaniesFromServer() -&gt; ()"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Model/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "540">
+               </Location>
+               <Location
+                  uuid = "A93B4DF3-F205-41B8-8922-DC2FBAC35734 - 1fdb08defe221d5b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CompanyDatabase.JSONService.downloadCompaniesFromServer() -&gt; ()"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Model/Service.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D59521FD-9E4E-4559-841E-63850D57C219"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CBB67D08-BAF6-4D82-8ABB-717D3A7AB252"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA57CC66-8195-4BE0-8570-483819016FEC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D159237F-C313-4777-821C-E78E5B61827B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "CreateEmployeeController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - 2ce6865e833981b3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.company.getter : Swift.Optional&lt;CompanyDatabase.Company&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - c6cb818f4d4c0957"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.company.setter : Swift.Optional&lt;CompanyDatabase.Company&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "160">
+               </Location>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - 3511e1818b9613a4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.company.modify : Swift.Optional&lt;CompanyDatabase.Company&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - ca5b30357d44e960"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.company.modify : Swift.Optional&lt;CompanyDatabase.Company&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - adb193040c6da49a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CompanyDatabase.CreateEmployeeController"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "182">
+               </Location>
+               <Location
+                  uuid = "D159237F-C313-4777-821C-E78E5B61827B - c938bb72e8cb5b1c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.CreateEmployeeController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CompanyDatabase.CreateEmployeeController&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/CreateEmployeeController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "111">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Controller/Employees/EmployeesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "company"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431 - c4956e9edeab3eae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.EmployeeController.company.modify : Swift.Optional&lt;CompanyDatabase.Company&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/EmployeesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431 - 13c5b9b7a47b62fe"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.EmployeeController.company.modify : Swift.Optional&lt;CompanyDatabase.Company&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/EmployeesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431 - 6e41bc31384d7a3"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.EmployeeController.init(style: __C.UITableViewStyle) -&gt; CompanyDatabase.EmployeeController"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/EmployeesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431 - 2432ed94a6e4bbd5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.EmployeeController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CompanyDatabase.EmployeeController"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/EmployeesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1009">
+               </Location>
+               <Location
+                  uuid = "8EC2F58C-DC69-4CB4-AF3A-EBF635D61431 - 3101a98308cdbcaf"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CompanyDatabase.EmployeeController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CompanyDatabase.EmployeeController&gt;"
+                  moduleName = "CompanyDatabase"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igor_tk4/Documents/DEVELOPMENT/CompanyDatabase/CompanyDatabase/Controller/Employees/EmployeesController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "944">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8C216653-5A7F-47D2-BFD7-30C18CE36304"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Controller/Employees/EmployeesController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "company"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D63595DE-4DFF-45F4-8EBF-263511BBB8C2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9C0C006-73FE-482C-ADDE-D8128A4A1DFA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "81D3B290-3742-4E6C-8AD2-238FE83C5FA6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9A333E3-CB56-4704-984D-DDA75BE85239"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CompanyDatabase/Model/Service.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "downloadCompaniesFromServer()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

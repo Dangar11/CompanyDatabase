@@ -26,9 +26,10 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   var allEmployees = [[Employee]]()
   
   var employeeTypes = [
-    EmployeeType.TechLead.rawValue,
-    EmployeeType.Senior.rawValue,
-    EmployeeType.Employee.rawValue
+    EmployeeType.Intern.rawValue,
+    EmployeeType.Executive.rawValue,
+    EmployeeType.SeniorManagement.rawValue,
+    EmployeeType.Staff.rawValue
   ]
   
   var company: Company? {
@@ -108,7 +109,6 @@ class EmployeeController: UITableViewController, CreateEmployeeControllerDelegat
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
     
-//    let employee = indexPath.section == 0 ? shortNameEmployees[indexPath.row] : longNameEmployees[indexPath.row]
     
     let employee = allEmployees[indexPath.section][indexPath.row]
     
