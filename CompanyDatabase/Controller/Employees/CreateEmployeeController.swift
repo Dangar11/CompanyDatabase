@@ -104,7 +104,7 @@ class CreateEmployeeController: UIViewController {
     
     let birthdayDate = dateFormatter.date(from: birthayText)
     guard let bornDate = birthdayDate else {
-     showError(title: "The date isn't vali  d", message: "Please enter valid date format")
+     showError(title: "The date isn't valid", message: "Please enter valid date format")
       return }
     
     guard let employeeType = employeeTypeSegmentedControl.titleForSegment(at: employeeTypeSegmentedControl.selectedSegmentIndex) else { return }

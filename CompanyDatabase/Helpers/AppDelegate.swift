@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow()
     window?.makeKeyAndVisible()
     
-    let companiesController = CompaniesAutoUpdateController()
+    let companiesController = CompaniesController()
     let navController = CustomNavigationController(rootViewController: companiesController)
     window?.rootViewController = navController
     

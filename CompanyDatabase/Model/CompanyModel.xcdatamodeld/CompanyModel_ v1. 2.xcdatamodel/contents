@@ -10,7 +10,7 @@
     </entity>
     <entity name="Employee" representedClassName="Employee" elementID="name" syncable="YES" codeGenerationType="class">
         <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String" elementID="name"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="company" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Company" inverseName="employees" inverseEntity="Company"/>
     </entity>

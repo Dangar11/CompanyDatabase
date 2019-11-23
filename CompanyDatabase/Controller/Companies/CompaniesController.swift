@@ -29,9 +29,7 @@ class CompaniesController: UITableViewController {
     setupTableView()
     setupNavigationStyle(title: "Companies")
     
-    navigationItem.leftBarButtonItems = [
-      UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleResetCompany)),
-      UIBarButtonItem(title: "Do Nested", style: .plain, target: self, action: #selector(doNested))]
+    navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Reset", style: .plain, target: self, action: #selector(handleResetCompany))
     
     navigationItem.leftBarButtonItems?.forEach({ (bar) in
       bar.tintColor = .white
@@ -112,61 +110,7 @@ class CompaniesController: UITableViewController {
     
   }
   
-  @objc func doNested() {
-    print("Nested")
-    
-    DispatchQueue.global(qos: .background).async {
-      //perform
-      
-      let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-      
-      privateContext.parent = CoreDataManager.shared.persistentContainer.viewContext
-      
-      let request: NSFetchRequest<Company> = Company.fetchRequest()
-      request.fetchLimit = 1
-      
-      do {
-        let companies = try privateContext.fetch(request)
-        
-        companies.forEach { (company) in
-          print(company.name ?? "")
-          company.name = "D : \(company.name ?? "")"
-        }
-        
-        
-        do {
-          try privateContext.save()
-          
-          //after save succeeds
-          
-          DispatchQueue.main.async {
-            
-            do  {
-              let context = CoreDataManager.shared.persistentContainer.viewContext
-              if context.hasChanges {
-               try context.save()
-              }
-              
-            
-            } catch let error {
-              print("error", error.localizedDescription)
-            }
-            
-            
-            self.tableView.reloadData()
-          }
-        } catch let error {
-          print(error.localizedDescription)
-        }
-        
-        
-      } catch let error {
-        print("Unable to fetch: ", error.localizedDescription)
-      }
-      
-      
-    }
-  }
+
   
   
   

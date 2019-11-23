@@ -50,7 +50,7 @@ struct CoreDataManager {
     employee.company = company
     employee.type = employeeType
     
-    employee.setValue(employeeName, forKey: "name")
+    employee.setValue(employeeName, forKey: "fullName")
     employee.setValue(birthday, forKey: "birthday")
     
     
